@@ -28,4 +28,9 @@ npm run client
 - lib/storageHandler conatins handler function to perform CRUD. For this project i have used filestorageHandler.
 - Data is being stored in temp/index.json as a JSON Array.
 
+### Assumption
+- If a user register with valid referral code then both referrer and referee will get 50 grofer cash.
+- A referrer will achieve a milestone if total referral count will be multiple of 5.
+- On achieving a milestone referrer will get additional grofer cash of value 100*(milestone).
+
 
