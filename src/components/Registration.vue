@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <h1> Referral Portal </h1>
-        <label ><b>Email</b></label>
+        <label ><b>Email*</b></label>&nbsp;&nbsp;
         <input type="text" placeholder="Enter Email" name="email" id="email" required> &nbsp;&nbsp;&nbsp;&nbsp;
-        <label ><b>Password</b></label>
+        <label ><b>Password*</b></label>&nbsp;&nbsp;
         <input type="password" placeholder="Enter Password" name="psw" id="password" required>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label ><b>Referral Code</b></label>
+        <label ><b>Referral Code</b></label>&nbsp;&nbsp;
         <input type="text" placeholder="Enter Referral code" name="Referral" id="referral" required>&nbsp;&nbsp;&nbsp;&nbsp;
         <button type="submit" class="container registerbtn" @click="registerUser">Register</button><br>
         <div class="container signin">
@@ -28,8 +28,20 @@ export default{
             var email = document.getElementById('email').value;
             var pass = document.getElementById('password').value;
             var ref_id = document.getElementById('referral').value;
-            console.log(email+'.........email');
-            axios.post('/api/register',{email:email,password:pass,ref_id:ref_id}).then((response)=>{
+            if(!this.checkValidEmail(email)){
+               swal({
+                  title: 'Enter Valid Email',
+                  icon: 'error',
+               })
+            }
+            else if(pass.length<=3){
+               swal({
+                 title: 'Password length Should be greater than three',
+                 icon: 'error',
+               })
+            }
+            else{
+            axios.post('/api/register',{email: email, password: pass, ref_id: ref_id}).then((response)=>{
                 console.log(response);
                 document.getElementById('email').value = '';
                 document.getElementById('password').value = '';
@@ -49,7 +61,14 @@ export default{
                 }
                 
             }).catch((err)=>{console.log(err)});
+            }
         },
+
+        checkValidEmail(email) {
+          const rejex = /^(([^<>()[\]\\.,;:\s@]+(\.[^<>()[\]\\.,;:\s@]+)*)|(.+))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+           return rejex.test(email);
+        },
+
         loginRedirect(){
             this.$router.push('/login').catch(()=>{});
         }

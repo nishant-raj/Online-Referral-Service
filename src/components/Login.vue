@@ -1,9 +1,9 @@
 <template>
     <div class="container">
         <h1> Referral Portal </h1>
-        <label ><b>Email</b></label>
+        <label ><b>Email</b></label>&nbsp;&nbsp;
         <input type="text" placeholder="Enter Email" name="email" id="email" required>&nbsp;&nbsp;&nbsp;&nbsp;
-        <label ><b>Password</b></label>
+        <label ><b>Password</b></label>&nbsp;&nbsp;
         <input type="password" placeholder="Enter Password" name="psw" id="password" required>&nbsp;&nbsp;&nbsp;&nbsp;
         <button type="submit" class="registerbtn" @click="login">Login</button>
       
