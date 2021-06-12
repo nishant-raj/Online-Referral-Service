@@ -1,0 +1,60 @@
+{
+  "name": "referral-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run server",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "server": "node ./src/server/index.js",
+    "client": "vue-cli-service serve --port 3001",
+    "dev": "npm run server & vue-cli-service serve --port 3001"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cfenv": "^1.2.4",
+    "core-js": "^3.6.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "shortid": "^2.2.16",
+    "sweetalert": "^2.1.2",
+    "uuid": "^8.3.2",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vue-template-compiler": "^2.6.12"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "express-http-proxy": "^1.6.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": "12.x"
+  }
+}
