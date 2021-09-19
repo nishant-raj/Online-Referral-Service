@@ -1,4 +1,4 @@
-# Referral System
+# Online Referral Service
 
 ## Project setup
 ```
